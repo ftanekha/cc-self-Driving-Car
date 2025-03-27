@@ -32,6 +32,23 @@ const autonomousCar = new Car({isRunning: true})
 // console.log(autonomousCar.isRunning)
 // console.log(autonomousCar.respond(getObstacleEvents()))
 
+//declare a main control interface for responding to events
 interface Control {
     execute: (command: string) => void
 }
+//declare an interface for the steering/turning response
+interface Steering extends Control {
+    turn: (direction: string) => void
+}
+
+class SteeringControl implements Steering {
+    execute(command: string){
+        console.log(`Executing: ${command}`)
+    }
+    turn(direction: string){
+        this.execute(direction)
+    }
+}
+//instatiate a right turn
+const steering = new SteeringControl()
+steering.turn('right')

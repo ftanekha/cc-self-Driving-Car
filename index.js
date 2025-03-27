@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var computer_vision_1 = require("./computer-vision");
+//define class for car
 var Car = /** @class */ (function () {
     function Car(props) {
         this.isRunning = props === null || props === void 0 ? void 0 : props.isRunning;
@@ -12,6 +12,17 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
-var autonomousCar = new Car({ isRunning: false });
-console.log(autonomousCar.isRunning);
-console.log(autonomousCar.respond((0, computer_vision_1.getObstacleEvents)()));
+var autonomousCar = new Car({ isRunning: true });
+var SteeringControl = /** @class */ (function () {
+    function SteeringControl() {
+    }
+    SteeringControl.prototype.execute = function (command) {
+        console.log("Executing: ".concat(command));
+    };
+    SteeringControl.prototype.turn = function (direction) {
+        this.execute(direction);
+    };
+    return SteeringControl;
+}());
+var steering = new SteeringControl();
+steering.turn('right');
