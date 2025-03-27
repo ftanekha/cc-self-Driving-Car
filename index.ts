@@ -12,6 +12,7 @@ interface AutonomousCarProps{
     isRunning?: boolean
 }
 
+//define class for car
 class Car implements AutonomousCar {
     isRunning?: boolean
 
@@ -26,7 +27,11 @@ class Car implements AutonomousCar {
     }
 }
 
-const autonomousCar = new Car({isRunning: false})
+const autonomousCar = new Car({isRunning: true})
 
-console.log(autonomousCar.isRunning)
-console.log(autonomousCar.respond(getObstacleEvents()))
+// console.log(autonomousCar.isRunning)
+// console.log(autonomousCar.respond(getObstacleEvents()))
+
+interface Control {
+    execute: (command: string) => void
+}
