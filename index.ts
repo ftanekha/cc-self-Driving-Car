@@ -44,10 +44,6 @@ class Car implements AutonomousCar {
     }
 }
 
-// const autonomousCar = new Car({isRunning: true, steeringControl: steering})
-
-// console.log(autonomousCar.isRunning)
-
 //declare a main control interface for responding to events
 interface Control {
     execute: (command: string) => void
