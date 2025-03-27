@@ -16,3 +16,7 @@ Project file structure:
 - **index.ts**: The file we’ll use to write a self-driving car program.
 - **computer-vision.ts**: Contains a function that will generate random obstacles for our car to avoid.
 - **tsconfig.json**: Defines the rules for TypeScript to compile code into JavaScript.
+
+
+To create this program, we’re going to create a class named Car that we will make autonomous by adding typed properties and methods to it. 
+By the end of the program, we’ll have a Car that can take control of steering and react to obstacles.
