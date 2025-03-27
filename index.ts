@@ -10,14 +10,17 @@ interface AutonomousCar {
 
 interface AutonomousCarProps{
     isRunning?: boolean
+    steeringControl: Steering
 }
 
 //define class for car
 class Car implements AutonomousCar {
     isRunning?: boolean
+    steeringControl: Steering
 
     constructor(props: AutonomousCarProps){
         this.isRunning = props?.isRunning
+        this.steeringControl = props.steeringControl
     }
 
     respond(events: Events){
@@ -27,7 +30,7 @@ class Car implements AutonomousCar {
     }
 }
 
-const autonomousCar = new Car({isRunning: true})
+// const autonomousCar = new Car({isRunning: true, steeringControl: steering})
 
 // console.log(autonomousCar.isRunning)
 // console.log(autonomousCar.respond(getObstacleEvents()))
@@ -52,3 +55,6 @@ class SteeringControl implements Steering {
 //instatiate a right turn
 const steering = new SteeringControl()
 steering.turn('right')
+
+//give Car class access to control steering
+const autonomousCar = new Car({isRunning: true, steeringControl: steering})
